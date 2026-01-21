@@ -47,7 +47,7 @@ export async function POST(request: Request) {
       health: body.health || {},
       voice_note_url: body.voiceNoteUrl,
       voice_note_duration: body.voiceNoteDuration,
-    })
+    }as any)
     .select()
     .single()
 

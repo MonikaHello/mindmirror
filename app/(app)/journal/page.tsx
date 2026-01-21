@@ -24,7 +24,7 @@ export default async function JournalPage() {
     <JournalClient 
       initialEntries={entries || []} 
       profile={profile!}
-      isPremium={profile?.subscription_status === 'premium'}
+      isPremium={(profile as any)?.subscription_status === 'premium'}
     />
   )
 }
