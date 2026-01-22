@@ -1,11 +1,11 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, Suspense } from 'react'
 import { createClient } from '@/lib/supabase/client'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 
-export default function SignupPage() {
+function SignupContent() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [name, setName] = useState('')
@@ -18,6 +18,12 @@ export default function SignupPage() {
 
   const handleSignup = async (e: React.FormEvent) => {
     e.preventDefault()
+    
+    if (!name.trim()) {
+      setError('Please enter your name')
+      return
+    }
+    
     setLoading(true)
     setError(null)
 
@@ -26,7 +32,7 @@ export default function SignupPage() {
       password,
       options: {
         data: {
-          name,
+          name: name.trim(),
         },
         emailRedirectTo: `${window.location.origin}/auth/callback`,
       },
@@ -65,7 +71,7 @@ export default function SignupPage() {
             </div>
             <h2 className="text-2xl font-light mb-4">Check your email</h2>
             <p className="text-white/60 mb-6">
-              We've sent a confirmation link to <strong>{email}</strong>. 
+              We sent a confirmation link to <strong>{email}</strong>. 
               Click it to activate your account.
             </p>
             <Link href="/login" className="btn btn-primary">
@@ -81,8 +87,8 @@ export default function SignupPage() {
     <div className="min-h-screen flex items-center justify-center px-6">
       <div className="w-full max-w-md">
         <div className="text-center mb-10">
-          <Link href="/" className="text-2xl font-semibold">MindMirror</Link>
-          <h1 className="text-3xl font-light mt-6 mb-2">Create your account</h1>
+          <Link href="/" className="text-2xl font-bold tracking-tight">MIND<br/>MIRROR</Link>
+          <h1 className="text-2xl font-light mt-6 mb-2">Create your account</h1>
           <p className="text-white/50">Start understanding your patterns</p>
         </div>
 
@@ -114,13 +120,14 @@ export default function SignupPage() {
 
           <form onSubmit={handleSignup} className="space-y-4">
             <div>
-              <label className="block text-sm text-white/50 mb-2">Name</label>
+              <label className="block text-sm text-white/50 mb-2">Your name</label>
               <input
                 type="text"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 className="input"
-                placeholder="Your name"
+                placeholder="What should we call you?"
+                required
               />
             </div>
             <div>
@@ -172,5 +179,13 @@ export default function SignupPage() {
         </div>
       </div>
     </div>
+  )
+}
+
+export default function SignupPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}>
+      <SignupContent />
+    </Suspense>
   )
 }
