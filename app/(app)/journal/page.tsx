@@ -18,11 +18,6 @@ export default async function JournalPage() {
     .eq('id', user.id)
     .single() as any
 
-  // Check if user needs onboarding
-  if (profile && !profile.onboarding_complete) {
-    redirect('/onboarding')
-  }
-
   // Get user entries
   const { data: entries } = await supabase
     .from('entries')
