@@ -23,7 +23,7 @@ export default function HomePage() {
             Your brain is a prediction machine.
           </p>
           <p className="text-lg text-white/50 mb-10 max-w-2xl mx-auto leading-relaxed">
-            MindMirror helps you see your mental predictions — your priors — and gives you 
+            MindMirror helps you see your mental predictions, your priors, and gives you 
             the awareness to update them. Track thoughts, feelings, and body states. 
             Discover patterns. Change outcomes.
           </p>
@@ -38,19 +38,25 @@ export default function HomePage() {
       <section id="science" className="py-20 px-6 border-t border-white/5">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-light text-center mb-6">
-            The Science of <span className="font-bold">Predictive Processing</span>
+            Predictive Processing & <span className="font-bold">Active Inference</span>
           </h2>
+          <p className="text-center text-white/60 max-w-3xl mx-auto mb-4">
+            Your brain doesn't wait for things to happen. It predicts them. Every thought,
+            feeling, and sensation is shaped by internal models called priors, built
+            from a lifetime of experience. This is <strong className="text-white/80">predictive processing</strong>: perception as prediction.
+            When reality matches, you barely notice. When it doesn't, you feel surprise, anxiety, or discomfort: a prediction error.
+          </p>
           <p className="text-center text-white/60 max-w-3xl mx-auto mb-8">
-            Your brain doesn't passively receive information — it actively predicts what will happen next. 
-            These predictions, called "priors," shape your perception, emotions, and behavior. 
-            When predictions don't match reality, you experience a "prediction error."
+            But the brain doesn't stop at perception. Through <strong className="text-white/80">active inference</strong>, it also acts to make predictions come true:
+            avoiding situations, seeking confirming evidence, behaving in ways that fulfill the prophecy.
+            This is why negative priors like "I'll mess up" or "People will judge me" don't just describe reality. They <em>create</em> it.
           </p>
           <blockquote className="border-l-2 border-primary/50 pl-6 my-8 text-white/70 italic">
-            "The brain is fundamentally an inference machine, constantly generating predictions 
-            about the causes of its sensory inputs."
+            "Active inference unifies perception and action: we either update our internal models to match the world, 
+            or we act on the world to match our models. Both minimize surprise."
           </blockquote>
           <p className="text-sm text-white/40 text-right mb-12">
-            — Friston, K. (2010). The free-energy principle: A unified brain theory? Nature Reviews Neuroscience
+            Friston, K. (2010). The free-energy principle: A unified brain theory? Nature Reviews Neuroscience
           </p>
           
           <div className="grid md:grid-cols-2 gap-8">
@@ -58,8 +64,8 @@ export default function HomePage() {
               <h3 className="font-medium mb-3">How Negative Priors Form</h3>
               <p className="text-sm text-white/60 mb-4">
                 If social situations have gone poorly in the past, your brain forms a prior: 
-                "social interactions will be negative." This prediction then guides your behavior 
-                (active inference), often creating a self-fulfilling prophecy.
+                "social interactions will be negative." Through active inference, this prediction guides your behavior,
+                often creating a self-fulfilling prophecy.
               </p>
               <p className="text-xs text-white/40">
                 Clark, A. (2015). Surfing uncertainty: Prediction, action, and the embodied mind
@@ -69,7 +75,7 @@ export default function HomePage() {
               <h3 className="font-medium mb-3">How to Update Them</h3>
               <p className="text-sm text-white/60 mb-4">
                 Awareness is the first step. By tracking your predictions and comparing them to 
-                actual outcomes, you create opportunities for prediction errors — the mechanism 
+                actual outcomes, you create opportunities for prediction errors: the mechanism 
                 by which priors get updated.
               </p>
               <p className="text-xs text-white/40">
@@ -93,20 +99,20 @@ export default function HomePage() {
             Your Body Affects Your Predictions
           </h2>
           <p className="text-center text-white/60 max-w-2xl mx-auto mb-12">
-            Research shows that your physiological state — sleep, hormones, stress — directly 
+            Research shows that your physiological state (sleep, hormones, stress) directly 
             influences how rigid or flexible your priors are. When you're dysregulated, 
             negative priors become more entrenched.
           </p>
           
           <div className="card p-6 bg-primary/5 border-primary/20 mb-8">
-            <h3 className="font-medium mb-3">The Depression Connection</h3>
+            <h3 className="font-medium mb-3">Predictive Processing & Anxiety</h3>
             <p className="text-sm text-white/70 mb-4">
-              Research indicates that disrupted predictive coding in depression involves overly 
-              precise negative priors and impaired prediction error signaling. This leads to 
-              maladaptive interpretations favoring negative outcomes and underweighting positive ones.
+              Anxiety involves overly precise negative priors that resist updating. The brain over-weights 
+              its predictions, making prediction errors feel more threatening. Through active inference,
+              this leads to avoidance behaviors that prevent the priors from being updated.
             </p>
             <p className="text-xs text-white/40">
-              Kube, T. et al. (2020). Distorted cognitive processes in major depression: A predictive processing perspective
+              Paulus, M. P. et al. (2019). Biological Psychiatry: CNNI
             </p>
           </div>
           
@@ -120,7 +126,7 @@ export default function HomePage() {
       <section className="py-20 px-6 border-t border-white/5">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-light text-center mb-16">How It Works</h2>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-4 gap-8">
             <div className="text-center">
               <div className="w-16 h-16 rounded-full border-2 border-white/20 flex items-center justify-center mx-auto mb-6">
                 <span className="text-2xl font-bold">1</span>
@@ -143,9 +149,18 @@ export default function HomePage() {
               <div className="w-16 h-16 rounded-full border-2 border-white/20 flex items-center justify-center mx-auto mb-6">
                 <span className="text-2xl font-bold">3</span>
               </div>
+              <h3 className="text-lg font-medium mb-3">Notice</h3>
+              <p className="text-white/60 text-sm">
+                With predictions visible, consciously notice when reality doesn't match. This creates prediction errors.
+              </p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 rounded-full border-2 border-white/20 flex items-center justify-center mx-auto mb-6">
+                <span className="text-2xl font-bold">4</span>
+              </div>
               <h3 className="text-lg font-medium mb-3">Update</h3>
               <p className="text-white/60 text-sm">
-                Notice when predictions don't match reality — creating opportunities to update your priors.
+                Repeated awareness of mismatches allows your brain to naturally update its priors.
               </p>
             </div>
           </div>
@@ -196,10 +211,10 @@ export default function HomePage() {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 px-6 border-t border-white/5">
+      <footer className="py-12 px-6 bg-[#69443c]">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="text-white/40 text-sm">© 2025 MindMirror</div>
-          <div className="flex gap-6 text-white/40 text-sm">
+          <div className="text-[#d4c4bc] text-sm">© 2025 MindMirror</div>
+          <div className="flex gap-6 text-[#d4c4bc]/70 text-sm">
             <Link href="/about" className="hover:text-white transition-colors">About</Link>
             <Link href="/privacy" className="hover:text-white transition-colors">Privacy</Link>
             <Link href="/terms" className="hover:text-white transition-colors">Terms</Link>
